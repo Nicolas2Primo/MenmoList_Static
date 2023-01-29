@@ -49,7 +49,7 @@ const UserSignUp = () => {
           pattern="(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*])[A-Za-z\d!@#\$%\^&\*]{8,}"
         />
         <span
-          className={`text-red-700 text-sm w-[270px] md:w-[300px] text-center hidden peer-placeholder-shown:!invisible peer-invalid:flex absolute bottom-32`}
+          className={`text-red-700 text-sm w-[270px] md:w-[300px] text-center hidden peer-placeholder-shown:!invisible peer-invalid:flex absolute bottom-[21.6%]`}
         >
           Password must be at least 8 characters in total, 1 uppercase letter, 1
           special character and 1 number.
