@@ -50,12 +50,15 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      <div
-        onClick={() => {
-          setOpen(false);
-        }}
-        className="h-screen w-screen  absolute   bg-opacity-0"
-      ></div>
+      {open ? (
+        <div
+          onClick={() => {
+            setOpen(false);
+          }}
+          className="h-screen w-screen  absolute   bg-opacity-0"
+        />
+      ) : null}
+
       <div
         className={`flex flex-col items-center justify-center gap-3 py-6 text-white transition-all duration-300 ease-in-out  ${
           open ? " opacity-100" : `mt-[-70%] opacity-0 `
