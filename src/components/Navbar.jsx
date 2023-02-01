@@ -1,13 +1,14 @@
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineLoading } from "react-icons/ai";
 import useScrollPosition from "../hooks/useScrollPosition";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
   const scrollPosition = useScrollPosition();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   const [links, setLinks] = useState([
     {
@@ -36,8 +37,12 @@ const Navbar = () => {
         <Link
           onClick={() => {
             setOpen(false);
-            setLoading(true);
-            setTimeout(() => setLoading(false), 2200);
+
+            if (location.pathname == "/") {
+            } else {
+              setLoading(true);
+              setTimeout(() => setLoading(false), 2200);
+            }
           }}
           to={"/"}
           className=" text-2xl font-bold"
@@ -92,7 +97,7 @@ const Navbar = () => {
         ))}
       </div>
       {loading ? (
-        <div className="w-full h-screen bg-black flex items-center justify-center sticky ">
+        <div className="w-full h-screen bg-black flex items-center justify-center absolute z-30">
           <AiOutlineLoading
             size={60}
             color="white"
