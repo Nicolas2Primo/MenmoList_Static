@@ -10,7 +10,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const { isLoad } = useContext(VideoLoadedContext);
+  const { isLoaded } = useContext(VideoLoadedContext);
 
   const [links, setLinks] = useState([
     {
@@ -98,7 +98,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      {isLoad ? (
+      {isLoaded ? (
         <div className="w-full h-screen bg-black flex items-center justify-center absolute z-30">
           <AiOutlineLoading
             size={60}

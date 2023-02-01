@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 
 const Home = () => {
-  const { handleLoad } = useContext(VideoLoadedContext);
+  const { handleLoad, isLoaded, setIsLoaded } = useContext(VideoLoadedContext);
 
   return (
     <div className=" z-0">
@@ -25,7 +25,9 @@ const Home = () => {
           }}
           autoPlay
           loop
-          onLoadedData={handleLoad}
+          onLoadedData={() => {
+            handleLoad();
+          }}
           muted
           defaultMuted
           playsInline

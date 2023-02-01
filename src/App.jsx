@@ -10,31 +10,25 @@ import { VideoLoadedProvider } from "./context/VideoLoadedContext";
 function App() {
   return (
     <div className=" h-screen ">
-      <Router>
-        <VideoLoadedProvider>
+      <VideoLoadedProvider>
+        <Router>
           <Navbar></Navbar>
-        </VideoLoadedProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <VideoLoadedProvider>
-                <Home />
-              </VideoLoadedProvider>
-            }
-          />
-          <Route path="login" element={<Login />} />
 
-          <Route
-            path="signup"
-            element={
-              <SignUpProvider>
-                <SignUp />
-              </SignUpProvider>
-            }
-          />
-        </Routes>
-      </Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+
+            <Route
+              path="signup"
+              element={
+                <SignUpProvider>
+                  <SignUp />
+                </SignUpProvider>
+              }
+            />
+          </Routes>
+        </Router>
+      </VideoLoadedProvider>
     </div>
   );
 }

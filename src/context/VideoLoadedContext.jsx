@@ -4,11 +4,11 @@ import React from "react";
 const VideoLoadedContext = createContext();
 
 export function VideoLoadedProvider({ children }) {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   const handleLoad = () => {
-    setIsLoaded(true);
-    console.log("Video loaded");
+    setIsLoaded(false);
+    console.log("Video loaded" + isLoaded);
   };
 
   return (
