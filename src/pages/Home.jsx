@@ -28,6 +28,7 @@ const Home = () => {
           onLoadedData={() => {
             handleLoad();
           }}
+          suspended
           muted={true}
           defaultMuted
           playsInline
