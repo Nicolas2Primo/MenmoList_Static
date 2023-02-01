@@ -24,7 +24,7 @@ const Home = () => {
           muted
           className=" h-screen w-screen object-cover"
         >
-          <source src={"src/assets/BackgroundVideo.mp4"} type="video/mp4" />
+          <source src={"public/BackgroundVideo.mp4"} type="video/mp4" />
         </video>
       </header>
       <footer className="bg-black  h-fit   text-white flex flex-col  justify-start items-start md:items-start gap-5   md:flex-col py-10 md:px-10 px-5   ">
