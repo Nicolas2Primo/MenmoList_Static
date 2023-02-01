@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import VideoLoadedContext from "../context/VideoLoadedContext";
 import {
   BsFacebook,
@@ -10,7 +10,14 @@ import {
 
 const Home = () => {
   const { handleLoad, isLoaded, setIsLoaded } = useContext(VideoLoadedContext);
-
+  const videoCurrent = useRef(HTMLVideoElement);
+  useEffect(() => {
+    if (videoCurrent.current) {
+      videoCurrent.current.play().catch(() => {
+        if (videoCurrent.current) videoCurrent.current.controls = true;
+      });
+    }
+  }, []);
   return (
     <div className=" z-0">
       <div className="absolute flex justify-center md:justify-start items-center md:items-end w-full h-screen bg-black bg-opacity-40">
@@ -20,6 +27,7 @@ const Home = () => {
       </div>
       <header className="h-screen">
         <video
+          ref={videoCurrent}
           onContextMenu={(e) => {
             e.preventDefault();
           }}
@@ -28,7 +36,6 @@ const Home = () => {
           onLoadedData={() => {
             handleLoad();
           }}
-          suspended
           muted={true}
           defaultMuted
           playsInline
