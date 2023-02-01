@@ -37,7 +37,7 @@ const Navbar = () => {
           onClick={() => {
             setOpen(false);
             setLoading(true);
-            setTimeout(() => setLoading(false), 1500);
+            setTimeout(() => setLoading(false), 2000);
           }}
           to={"/"}
           className=" text-2xl font-bold"
