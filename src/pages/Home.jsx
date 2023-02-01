@@ -30,7 +30,6 @@ const Home = () => {
           }}
           muted
           defaultMuted
-          playsInline
           className=" h-screen w-screen object-cover"
         >
           <source src={"/BackgroundVideo.mp4"} type="video/mp4" />
