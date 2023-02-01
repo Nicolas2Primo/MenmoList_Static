@@ -30,7 +30,6 @@ const Home = () => {
             handleLoad();
           }}
           muted
-          preload="auto"
           playsInline
           className=" h-screen w-screen object-cover"
         >
