@@ -2,13 +2,15 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineLoading } from "react-icons/ai";
 import useScrollPosition from "../hooks/useScrollPosition";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import VideoLoadedContext from "../context/VideoLoadedContext";
 
 const Navbar = () => {
   const scrollPosition = useScrollPosition();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+  const { isLoad } = useContext(VideoLoadedContext);
 
   const [links, setLinks] = useState([
     {
@@ -96,7 +98,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      {loading ? (
+      {isLoad ? (
         <div className="w-full h-screen bg-black flex items-center justify-center absolute z-30">
           <AiOutlineLoading
             size={60}

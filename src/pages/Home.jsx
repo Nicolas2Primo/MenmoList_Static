@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+import VideoLoadedContext from "../context/VideoLoadedContext";
 import {
   BsFacebook,
   BsTwitter,
@@ -7,6 +9,8 @@ import {
 } from "react-icons/bs";
 
 const Home = () => {
+  const { handleLoad } = useContext(VideoLoadedContext);
+
   return (
     <div className=" z-0">
       <div className="absolute flex justify-center md:justify-start items-center md:items-end w-full h-screen bg-black bg-opacity-40">
@@ -21,6 +25,7 @@ const Home = () => {
           }}
           autoPlay
           loop
+          onLoadedData={handleLoad}
           muted
           defaultMuted
           playsInline
