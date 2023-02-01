@@ -25,7 +25,7 @@ const Home = () => {
           }}
           autoPlay
           loop
-          onLoadedData={() => {
+          onCanPlay={() => {
             handleLoad();
           }}
           muted
