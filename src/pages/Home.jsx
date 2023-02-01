@@ -23,7 +23,7 @@ const Home = () => {
           onContextMenu={(e) => {
             e.preventDefault();
           }}
-          autoPlay={true}
+          autoplay={true}
           loop={true}
           onLoadedData={() => {
             handleLoad();
