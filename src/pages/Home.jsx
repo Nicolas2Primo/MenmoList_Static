@@ -23,12 +23,12 @@ const Home = () => {
           onContextMenu={(e) => {
             e.preventDefault();
           }}
-          autoPlay
-          loop
+          autoPlay={true}
+          loop={true}
           onLoadedData={() => {
             handleLoad();
           }}
-          muted
+          muted={true}
           defaultMuted
           playsInline
           className=" h-screen w-screen object-cover"
