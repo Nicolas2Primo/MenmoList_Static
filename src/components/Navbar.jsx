@@ -31,7 +31,13 @@ const Navbar = () => {
             : ""
         } transition-all duration-500 ease-in z-20`}
       >
-        <Link to={"/"} className=" text-2xl font-bold">
+        <Link
+          onClick={() => {
+            setOpen(false);
+          }}
+          to={"/"}
+          className=" text-2xl font-bold"
+        >
           MenmoList
         </Link>
         <FiMenu
@@ -66,6 +72,9 @@ const Navbar = () => {
       >
         {links.map((link) => (
           <Link
+            onClick={() => {
+              setOpen(false);
+            }}
             key={link.nome}
             to={link.link}
             className={`${
