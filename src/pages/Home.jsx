@@ -24,7 +24,6 @@ const Home = () => {
             e.preventDefault();
           }}
           autoPlay
-          controls={false}
           loop
           onLoadedData={() => {
             handleLoad();
