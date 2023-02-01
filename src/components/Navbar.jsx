@@ -1,4 +1,5 @@
 import { FiMenu } from "react-icons/fi";
+import { AiOutlineLoading } from "react-icons/ai";
 import useScrollPosition from "../hooks/useScrollPosition";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -6,6 +7,7 @@ import { useState } from "react";
 const Navbar = () => {
   const scrollPosition = useScrollPosition();
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [links, setLinks] = useState([
     {
@@ -23,7 +25,7 @@ const Navbar = () => {
   ]);
 
   return (
-    <div className={`w-full h-auto  z-10 fixed   `}>
+    <div className={`w-full h-auto   z-10 fixed   `}>
       <div
         className={`flex justify-between items-center text-white h-[65px] px-4 ${
           scrollPosition > 150 || open
@@ -34,6 +36,8 @@ const Navbar = () => {
         <Link
           onClick={() => {
             setOpen(false);
+            setLoading(true);
+            setTimeout(() => setLoading(false), 1000);
           }}
           to={"/"}
           className=" text-2xl font-bold"
@@ -67,7 +71,7 @@ const Navbar = () => {
 
       <div
         className={`flex flex-col items-center justify-center gap-3 py-6 text-white transition-all duration-300 ease-in-out  ${
-          open ? " opacity-100" : `mt-[-70%] opacity-0 `
+          open ? " opacity-100" : `mt-[-77.5%] opacity-0 `
         }  ${open ? "bg-black bg-opacity-70 backdrop-blur-sm" : ""}  z-[-5] `}
       >
         {links.map((link) => (
@@ -87,6 +91,15 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
+      {loading ? (
+        <div className="w-full h-screen bg-black flex items-center justify-center sticky ">
+          <AiOutlineLoading
+            size={60}
+            color="white"
+            className=" animate-spin"
+          ></AiOutlineLoading>
+        </div>
+      ) : null}
     </div>
   );
 };
