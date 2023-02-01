@@ -30,6 +30,7 @@ const Home = () => {
             handleLoad();
           }}
           muted
+          defaultMuted
           playsInline
           className=" h-screen w-screen object-cover"
         >
