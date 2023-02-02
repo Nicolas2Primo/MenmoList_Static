@@ -10,7 +10,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const { isLoaded } = useContext(VideoLoadedContext);
+  const { isLoaded, setIsLoaded } = useContext(VideoLoadedContext);
 
   const [links, setLinks] = useState([
     {
@@ -39,11 +39,10 @@ const Navbar = () => {
         <Link
           onClick={() => {
             setOpen(false);
-
+            console.log(location.pathname);
             if (location.pathname == "/") {
             } else {
-              setLoading(true);
-              setTimeout(() => setLoading(false), 2200);
+              setIsLoaded(true);
             }
           }}
           to={"/"}
