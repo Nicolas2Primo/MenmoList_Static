@@ -39,11 +39,6 @@ const Navbar = () => {
         <Link
           onClick={() => {
             setOpen(false);
-            console.log(location.pathname);
-            if (location.pathname == "/") {
-            } else {
-              setIsLoaded(true);
-            }
           }}
           to={"/"}
           className=" text-2xl font-bold"

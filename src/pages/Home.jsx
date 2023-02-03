@@ -10,9 +10,6 @@ import {
 import { AiOutlineLoading } from "react-icons/ai";
 
 const Home = () => {
-  const { handleLoad, isLoaded, setIsLoaded } = useContext(VideoLoadedContext);
-  const [footerVisibility, setFooterVisibility] = useState(false);
-
   return (
     <div className=" z-0">
       <div className="absolute flex justify-start md:justify-start items-end md:items-end w-full h-screen bg-black bg-opacity-40">
@@ -28,14 +25,11 @@ const Home = () => {
           }}
           autoPlay={true}
           loop={true}
-          onLoadedData={() => {
-            handleLoad();
-          }}
           preload="auto"
           muted={true}
           defaultMuted
           playsInline
-          className=" h-screen w-screen object-cover"
+          className=" h-screen w-screen object-cover transition-all duration-500 ease-in"
         >
           <source src={"/BackgroundCompressed.mp4"} type="video/mp4" />
         </video>
