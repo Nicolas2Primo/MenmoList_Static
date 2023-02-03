@@ -42,7 +42,7 @@ const Home = () => {
           playsInline
           className=" h-screen w-screen object-cover"
         >
-          <source src={"/BackgroundVideo.mp4"} type="video/mp4" />
+          <source src={"/BackgroundCompressed.mp4"} type="video/mp4" />
         </video>
       </header>
 
