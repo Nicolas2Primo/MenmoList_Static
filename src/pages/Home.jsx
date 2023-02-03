@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import VideoLoadedContext from "../context/VideoLoadedContext";
 import {
   BsFacebook,
@@ -7,17 +7,29 @@ import {
   BsGithub,
   BsLinkedin,
 } from "react-icons/bs";
+import { AiOutlineLoading } from "react-icons/ai";
 
 const Home = () => {
   const { handleLoad, isLoaded, setIsLoaded } = useContext(VideoLoadedContext);
+  const [footerVisibility, setFooterVisibility] = useState(false);
 
   return (
     <div className=" z-0">
+      {isLoaded ? (
+        <div className="w-full h-full bg-black flex items-center justify-center absolute z-30">
+          <AiOutlineLoading
+            size={60}
+            color="white"
+            className=" animate-spin"
+          ></AiOutlineLoading>
+        </div>
+      ) : null}
       <div className="absolute flex justify-center md:justify-start items-center md:items-end w-full h-screen bg-black bg-opacity-40">
         <span className="text-white  w-[250px] md:w-[500px]  md:pl-16 md:pb-32 text-2xl md:text-4xl font-bold ">
           Welcome to the most innovative to-do list ever.
         </span>
       </div>
+
       <header className="h-screen">
         <video
           onContextMenu={(e) => {
@@ -37,7 +49,10 @@ const Home = () => {
           <source src={"/BackgroundVideo.mp4"} type="video/mp4" />
         </video>
       </header>
-      <footer className="bg-black  h-fit   text-white flex flex-col  justify-start items-start md:items-start gap-5   md:flex-col py-10 md:px-10 px-5   ">
+
+      <footer
+        className={`bg-black  h-fit   text-white flex flex-col  justify-start items-start md:items-start gap-5   md:flex-col py-10 md:px-10 px-5`}
+      >
         <h1 className=" text-xl font-bold">MenmoList</h1>
         <div className="grid grid-cols-2 grid-rows-2  w-full  gap-4 md:gap-0  py-10 md:grid-cols-4 md:grid-rows-1 md:w-full md:justify-between md:py-16  ">
           <div className="flex flex-col justify-start">

@@ -1,5 +1,5 @@
 import { FiMenu } from "react-icons/fi";
-import { AiOutlineLoading } from "react-icons/ai";
+
 import useScrollPosition from "../hooks/useScrollPosition";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useContext } from "react";
@@ -97,15 +97,6 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      {isLoaded ? (
-        <div className="w-full h-screen bg-black flex items-center justify-center absolute z-30">
-          <AiOutlineLoading
-            size={60}
-            color="white"
-            className=" animate-spin"
-          ></AiOutlineLoading>
-        </div>
-      ) : null}
     </div>
   );
 };
