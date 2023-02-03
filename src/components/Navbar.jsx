@@ -34,7 +34,7 @@ const Navbar = () => {
           scrollPosition > 150 || open
             ? "backdrop-blur-sm bg-black bg-opacity-70"
             : ""
-        } transition-all duration-500 ease-in z-20`}
+        } transition-all duration-500 ease-in-out z-20`}
       >
         <Link
           onClick={() => {
@@ -71,8 +71,8 @@ const Navbar = () => {
       ) : null}
 
       <div
-        className={`flex flex-col items-center justify-center gap-3 py-6 text-white transition-all duration-300 ease-in-out  ${
-          open ? " opacity-100" : `mt-[-77.5%] opacity-0 `
+        className={`flex flex-col items-center justify-center gap-3 py-6 text-white transition-all duration-500 ease-in-out  ${
+          open ? " opacity-100 visible" : `mt-[-13%] opacity-0 invisible `
         }  ${open ? "bg-black bg-opacity-70 backdrop-blur-sm" : ""}  z-[-5] `}
       >
         {links.map((link) => (
