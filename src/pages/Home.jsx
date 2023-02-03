@@ -15,8 +15,8 @@ const Home = () => {
 
   return (
     <div className=" z-0">
-      <div className="absolute flex justify-center md:justify-start items-center md:items-end w-full h-screen bg-black bg-opacity-40">
-        <span className="text-white  w-[250px] md:w-[500px]  md:pl-16 md:pb-32 text-2xl md:text-4xl font-bold ">
+      <div className="absolute flex justify-start md:justify-start items-end md:items-end w-full h-screen bg-black bg-opacity-40">
+        <span className="text-white  w-[290px] md:w-[500px] pl-6 pb-32 md:pl-16 md:pb-32 text-2xl md:text-4xl font-bold ">
           Welcome to the most innovative to-do list ever.
         </span>
       </div>
