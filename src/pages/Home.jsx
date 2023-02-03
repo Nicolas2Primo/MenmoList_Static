@@ -22,11 +22,6 @@ const Home = () => {
       </div>
 
       <header className="h-screen">
-        {isLoaded ? (
-          <div
-            className={`w-full h-full bg-black opacity-100 flex items-center justify-center object-cover z-30 transition-opacity duration-1000 ease-in`}
-          ></div>
-        ) : null}
         <video
           onContextMenu={(e) => {
             e.preventDefault();
