@@ -14,16 +14,7 @@ const Home = () => {
   const [footerVisibility, setFooterVisibility] = useState(false);
 
   return (
-    <div className=" z-0  h-full w-screen ">
-      {isLoaded ? (
-        <div className="w-full h-full bg-black flex items-center justify-center absolute z-30">
-          <AiOutlineLoading
-            size={60}
-            color="white"
-            className=" animate-spin"
-          ></AiOutlineLoading>
-        </div>
-      ) : null}
+    <div className=" z-0">
       <div className="absolute flex justify-center md:justify-start items-center md:items-end w-full h-screen bg-black bg-opacity-40">
         <span className="text-white  w-[250px] md:w-[500px]  md:pl-16 md:pb-32 text-2xl md:text-4xl font-bold ">
           Welcome to the most innovative to-do list ever.
@@ -31,6 +22,15 @@ const Home = () => {
       </div>
 
       <header className="h-screen">
+        {isLoaded ? (
+          <div className="w-full h-full bg-black flex items-center justify-center object-cover z-30">
+            <AiOutlineLoading
+              size={60}
+              color="white"
+              className=" animate-spin"
+            ></AiOutlineLoading>
+          </div>
+        ) : null}
         <video
           onContextMenu={(e) => {
             e.preventDefault();
