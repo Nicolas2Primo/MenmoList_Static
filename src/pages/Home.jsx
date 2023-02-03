@@ -23,21 +23,17 @@ const Home = () => {
 
       <header className="h-screen">
         {isLoaded ? (
-          <div className="w-full h-full bg-black flex items-center justify-center object-cover z-30">
-            <AiOutlineLoading
-              size={60}
-              color="white"
-              className=" animate-spin"
-            ></AiOutlineLoading>
-          </div>
-        ) : null}
+          <div className="w-full h-full bg-black opacity-100 flex items-center justify-center object-cover z-30 transition-all duration-1000 ease-in"></div>
+        ) : (
+          <div className="opacity-0"></div>
+        )}
         <video
           onContextMenu={(e) => {
             e.preventDefault();
           }}
           autoPlay={true}
           loop={true}
-          onCanPlay={() => {
+          onLoadedData={() => {
             handleLoad();
           }}
           preload="auto"
