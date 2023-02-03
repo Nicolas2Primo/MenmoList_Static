@@ -14,7 +14,7 @@ const Home = () => {
   const [footerVisibility, setFooterVisibility] = useState(false);
 
   return (
-    <div className=" z-0">
+    <div className=" z-0  h-full w-screen ">
       {isLoaded ? (
         <div className="w-full h-full bg-black flex items-center justify-center absolute z-30">
           <AiOutlineLoading
