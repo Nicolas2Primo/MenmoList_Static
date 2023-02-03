@@ -23,9 +23,9 @@ const Home = () => {
 
       <header className="h-screen">
         {isLoaded ? (
-          <div className="w-full h-full bg-black opacity-100 flex items-center justify-center object-cover z-30 transition-all duration-1000 ease-in"></div>
+          <div className="w-full h-full bg-black opacity-100 flex items-center justify-center object-cover z-30 transition-opacity duration-1000 ease-in"></div>
         ) : (
-          <div className="opacity-0"></div>
+          <div className="bg-black opacity-0 transition-opacity duration-1000 ease-in"></div>
         )}
         <video
           onContextMenu={(e) => {
